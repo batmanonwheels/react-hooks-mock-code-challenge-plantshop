@@ -8,10 +8,7 @@ function PlantPage({ plantData, setPlantData }) {
   console.log(searchQuery);
 
   const filteredData = plantData.filter((plant) => {
-    if (plant.name.toLowerCase().includes(searchQuery.toLowerCase)) {
-      return plant;
-    }
-    return plant;
+    return plant.name.toLowerCase().includes(searchQuery.toLowerCase());
   });
 
   console.log(filteredData);
