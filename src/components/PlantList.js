@@ -1,11 +1,11 @@
 import React from 'react';
 import PlantCard from './PlantCard';
 
-function PlantList({ plantData }) {
+function PlantList({ filteredData }) {
   // console.log(plantData);
   return (
     <ul className='cards'>
-      {plantData.map((plant) => (
+      {filteredData.map((plant) => (
         <PlantCard plant={plant} key={plant.id} />
       ))}
     </ul>

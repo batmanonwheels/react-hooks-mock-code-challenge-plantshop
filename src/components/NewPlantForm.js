@@ -13,7 +13,14 @@ function NewPlantForm({ plantData, setPlantData }) {
   const handleSubmit = (e) => {
     e.preventDefault();
     setPlantData([...plantData, formData]);
-    // setFormData(defaultFormData);
+    fetch('http://localhost:6001/plants', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(formData),
+    })
+      .then((response) => response.json())
+      .then((data) => setFormData(data));
+    setFormData(defaultFormData);
   };
 
   const handleChange = (e) => {

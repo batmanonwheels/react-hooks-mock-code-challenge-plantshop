@@ -7,16 +7,19 @@ function PlantPage({ plantData, setPlantData }) {
   const [searchQuery, setSearchQuery] = useState('');
   console.log(searchQuery);
 
-  // let filteredData = plantData.filter((plant) =>
-  //   plant.name.toLowerCase().includes(searchQuery.toLowerCase)
-  // // );
+  const filteredData = plantData.filter((plant) => {
+    if (plant.name.toLowerCase().includes(searchQuery.toLowerCase)) {
+      return plant;
+    }
+    return plant;
+  });
 
-  // console.log(filteredData);
+  console.log(filteredData);
   return (
     <main>
       <NewPlantForm plantData={plantData} setPlantData={setPlantData} />
       <Search searchQuery={searchQuery} setSearchQuery={setSearchQuery} />
-      <PlantList plantData={plantData} />
+      <PlantList filteredData={filteredData} />
     </main>
   );
 }

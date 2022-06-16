@@ -12,13 +12,6 @@ function App() {
       .then((data) => setPlantData(data));
   }, []);
 
-  // useEffect(() => {
-  //   fetch(baseURL){
-
-  //   }
-
-  // }, []);
-
   return (
     <div className='app'>
       <Header />
